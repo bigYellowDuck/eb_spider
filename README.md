@@ -22,6 +22,7 @@ REDIS_HOST = 'xxx.xxx.xxx.xxx'  # 改为master端机器的IP
 所有机器的启动命令都是scrapy crawl xx --nolog<br>
 master端的redis作为爬虫队列<br>
 因此master端 输入 redis-cli lpush xx:start_urls https://........<br>
-<br>
-因为scrapy_redis修改过，所以默认的过滤器为布隆过滤器<br>
-如需关闭需要把settings.py里的`FILTER`开头的4行删除或注释<br>
+
+## 其余特性
+- 因为scrapy_redis修改过，所以默认的过滤器为260M大小的布隆过滤器, 如需关闭需要把settings.py里的`FILTER`开头的4行删除或注释<br>
+- 默认开启UserAgent, 不开启Proxy。如需开启Proxy，需要在ips.txt里填充可以用的代理IP
