@@ -11,7 +11,10 @@ redis-cli lpush jd:start_urls https://www.jd.com/allSort.aspx<br>
 爬取苏宁：<br>
 scrapy crawl suning --nolog<br>
 redis-cli lpush sn:start_urls http://as.suning.com/allsort.htm<br>
-
+<br>
+爬取国美：<br>
+scrapy crawl guomei --nolog<br>
+redis-cli lpush gm:start_urls https://list.gome.com.cn/<br>
 ## 分布式支持
 一台机器作为master端，源代码不用改变<br>
 其余机器的作为slave，在settings.py进行如下修改<br>
